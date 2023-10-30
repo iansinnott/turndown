@@ -56,13 +56,7 @@ function createHTMLParser () {
 }
 
 function shouldUseActiveX () {
-  var useActiveX = false
-  try {
-    document.implementation.createHTMLDocument('').open()
-  } catch (e) {
-    if (root.ActiveXObject) useActiveX = true
-  }
-  return useActiveX
+  return false;
 }
 
 export default canParseHTMLNatively() ? root.DOMParser : createHTMLParser()
